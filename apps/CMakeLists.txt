@@ -19,24 +19,25 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 list(APPEND target_apps "main")
 
 if ("main" IN_LIST target_apps)
-    add_executable(main)
+    set(target_name "main")
+    add_executable(${target_name})
     target_sources(
-        main
+        ${target_name}
     PUBLIC
-        main.cpp
+        ${target_name}.cpp
     )
     target_include_directories(
-        main
+        ${target_name}
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
     )
     target_link_libraries(
-        main
+        ${target_name}
     PUBLIC
         Boost::boost
         Threads::Threads
         {{ProjectName}}::{{ProjectName}}
     )
-    install(TARGETS main DESTINATION bin)
+    install(TARGETS ${target_name} DESTINATION bin)
 endif()
