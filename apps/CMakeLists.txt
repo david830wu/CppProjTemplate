@@ -38,4 +38,5 @@ if ("main" IN_LIST target_apps)
         Threads::Threads
         {{ProjectName}}::{{ProjectName}}
     )
+    install(TARGETS main DESTINATION bin)
 endif()

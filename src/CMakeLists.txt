@@ -34,3 +34,6 @@ PUBLIC
     Boost::boost
 )
 add_library({{ProjectName}}::{{ProjectName}} ALIAS {{ProjectName}})
+
+install(TARGETS {{ProjectName}} DESTINATION lib)
+install(FILES ${CMAKE_SOURCE_DIR}/include/{{ProjectName}}.h DESTINATION include)
