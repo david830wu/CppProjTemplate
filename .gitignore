@@ -33,6 +33,8 @@
 .vs
 *.sln
 *.vcxproj.*
+# vim
+*.swp
 
 # folders
 [Dd]ebug/
@@ -48,3 +50,14 @@ bld/
 [Ll]og/
 [Ll]logs/
 [Dd]ata/
+
+# Data
+*.csv
+*.hdf5
+*.h5
+*.gz
+*.zip
+
+# python
+__pycache__/
+*.pyc
