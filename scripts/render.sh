@@ -22,5 +22,6 @@ echo "Rendering file names"
 mv "include/ProjectName.h" "include/${ProjectName}.h"
 mv "src/ProjectName.cpp" "src/${ProjectName}.cpp"
 mv "tests/ProjectNameTest.cpp" "tests/${ProjectName}Test.cpp"
+mv "cmake/ProjectNameConfig.cmake" "cmake/${ProjectName}Config.cmake"
 
 echo "All Done"
