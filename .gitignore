@@ -36,6 +36,9 @@
 # vim
 *.swp
 
+# MacOs
+.DS_Store
+
 # folders
 [Dd]ebug/
 [Dd]ebugPublic/
