@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.27)
 
 project({{ProjectName}}Test
         VERSION {{Version}}
@@ -12,8 +12,8 @@ endif()
 
 enable_testing()
 
-# enable c++17 globally
-set(CMAKE_CXX_STANDARD 17)
+# enable c++20 globally
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -26,6 +26,7 @@ if ("{{ProjectName}}Test" IN_LIST target_tests)
     set(test_name "{{ProjectName}}Test")
     add_executable(${test_name})
     target_sources(${test_name} PUBLIC ${test_name}.cpp)
-    target_link_libraries(${test_name} PUBLIC Catch2::Catch2 {{ProjectName}}::{{ProjectName}})
+    target_link_libraries(${test_name} PUBLIC Catch2::Catch2WithMain {{ProjectName}}::{{ProjectName}})
     add_test("${test_name}" ${test_name})
 endif()
+

@@ -7,8 +7,7 @@
 
 #include "{{ProjectName}}.h"
 
-#define CATCH_CONFIG_MAIN
-#include "catch2/catch.hpp"
+#include <catch2/catch_test_macros.hpp>
 
 TEST_CASE("{{ProjectName}}Test", "[{{ProjectName}}]") {
     SECTION("Test") {

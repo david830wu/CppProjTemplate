@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.27)
 
 project({{ProjectName}}Apps
         VERSION {{Version}}
@@ -11,7 +11,7 @@ if(POLICY CMP0076)
 endif()
 
 # enable c++17 globally
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -35,9 +35,10 @@ if ("main" IN_LIST target_apps)
     target_link_libraries(
         ${target_name}
     PUBLIC
+        {{ProjectName}}::{{ProjectName}}
         Boost::boost
         Threads::Threads
-        {{ProjectName}}::{{ProjectName}}
     )
     install(TARGETS ${target_name} DESTINATION bin)
 endif()
+
