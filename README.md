@@ -1,3 +1,3 @@
-# CppProjTemplate
+# {{ProjectName}}
 
-Template for C++11 project build with cmake and test with Catch2
+{{Description}}

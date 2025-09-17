@@ -6,12 +6,12 @@
 */
 
 #include "{{ProjectName}}.h"
+#include "{{ProjectName}}Version.h"
 
-#include <iostream>
+#include <fmt/format.h>
 
 int main() {
-
-    std::cout << "Hello World" << std::endl;
+    fmt::print("Hello World, Version: {}\n", {{PROJECTNAME}}_VERSION);
 
     return 0;
 }

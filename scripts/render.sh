@@ -8,8 +8,10 @@ Today=$(date '+%Y%m%d')
 Version="0.1"
 Machine="$(uname -s)"
 
+PROJECTNAME=$(echo ${ProjectName} | tr '[:lower:]' '[:upper:]')
 ReplaceItems="\
 s,{{ProjectName}},${ProjectName},g;\
+s,{{PROJECTNAME}},${PROJECTNAME},g;\
 s,{{Description}},${Description},g;\
 s,{{Author}},${Author},g;\
 s,{{Today}},${Today},g;\
@@ -30,9 +32,9 @@ esac
 # rename files
 echo "Rendering file names"
 mv "include/ProjectName.h" "include/${ProjectName}.h"
+mv "include/ProjectNameVersion.h" "include/${ProjectName}Version.h"
 mv "src/ProjectName.cpp" "src/${ProjectName}.cpp"
 mv "tests/ProjectNameTest.cpp" "tests/${ProjectName}Test.cpp"
 mv "cmake/ProjectNameConfig.cmake" "cmake/${ProjectName}Config.cmake"
 
 echo "All Done"
-
